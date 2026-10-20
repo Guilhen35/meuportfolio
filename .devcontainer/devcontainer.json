@@ -1,0 +1,17 @@
+{
+  "name": "Portfólio",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ritwickdey.LiveServer",
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint"
+      ]
+    }
+  },
+  "forwardPorts": [5500],
+  "portsAttributes": {
+    "5500": { "label": "Portfólio (Live Server)", "onAutoForward": "openPreview" }
+  }
+}

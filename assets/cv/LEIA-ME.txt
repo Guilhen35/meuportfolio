@@ -1,0 +1,5 @@
+Coloque aqui o seu currículo com o nome: curriculo.pdf
+
+Antes de publicar, revise o PDF e remova dados sensíveis
+(CPF, RG, endereço completo, data de nascimento).
+Para contato, e-mail e LinkedIn já bastam.
