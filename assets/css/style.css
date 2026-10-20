@@ -256,6 +256,67 @@ svg {
 .projeto__links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: auto; padding-top: 8px; }
 .projeto__links .btn { min-height: 44px; padding: 0 18px; font-size: 14px; }
 
+/* ============ Sobre mim ============ */
+.sobre {
+  display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  gap: 48px; align-items: start;
+}
+.sobre__texto p { margin: 0 0 16px; font-size: 17px; line-height: 1.7; color: var(--texto-suave); }
+.sobre__texto strong { color: var(--texto); }
+.sobre__local { display: flex; align-items: center; gap: 8px; font-weight: 600; }
+.sobre__local svg { width: 20px; height: 20px; color: var(--texto); }
+
+.numeros {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px;
+  margin: 0; padding: 0; list-style: none;
+}
+.numeros li {
+  display: flex; flex-direction: column; gap: 4px;
+  padding: 24px; border-radius: 20px;
+  background: var(--surface); border: 1px solid var(--borda); box-shadow: var(--sombra);
+}
+.numeros strong { font-size: 44px; line-height: 1; font-weight: 800; }
+.numeros li:first-child { background: var(--destaque); border-color: var(--destaque); color: var(--sobre-destaque); }
+.numeros span { font-size: 14px; font-weight: 600; color: var(--texto-suave); }
+.numeros li:first-child span { color: var(--sobre-destaque); }
+
+.sobre__subtitulo { margin: 72px 0 24px; font-size: 26px; }
+
+.competencias { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); gap: 16px; }
+.competencia {
+  padding: 22px; border-radius: 18px;
+  background: var(--surface); border: 1px solid var(--borda);
+}
+.competencia h4 { margin: 0 0 14px; font-size: 16px; display: flex; align-items: center; gap: 10px; }
+.competencia h4::before { content: ""; width: 10px; height: 10px; border-radius: 3px; background: var(--destaque); outline: 1px solid var(--texto); }
+.competencia ul { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.competencia li {
+  padding: 4px 12px; border-radius: 999px;
+  background: var(--bg); border: 1px solid var(--borda);
+  font-size: 13px; font-weight: 600;
+}
+
+/* Linha do tempo: a borda esquerda é a "linha", o ::before é o ponto */
+.trajetoria { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px; }
+.linha { margin: 0; padding: 0 0 0 28px; list-style: none; border-left: 2px solid var(--borda); }
+.linha li { position: relative; padding-bottom: 32px; }
+.linha li:last-child { padding-bottom: 0; }
+.linha li::before {
+  content: ""; position: absolute; left: -36px; top: 4px;
+  width: 14px; height: 14px; border-radius: 50%;
+  background: var(--destaque); border: 2px solid var(--texto);
+}
+.linha__periodo { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; color: var(--texto-suave); }
+.linha h4 { margin: 4px 0 2px; font-size: 18px; }
+.linha p { margin: 0; color: var(--texto-suave); }
+.linha .linha__local { font-weight: 600; color: var(--texto); margin-bottom: 6px; }
+
+@media (max-width: 960px) {
+  .sobre, .trajetoria { grid-template-columns: 1fr; gap: 32px; }
+  .numeros strong { font-size: 36px; }
+  .sobre__subtitulo { margin-top: 56px; }
+}
+
 .rodape { text-align: center; padding: 32px; color: var(--texto-suave); font-size: 14px; }
 
 /* ============ Tablet e celular ============ */
