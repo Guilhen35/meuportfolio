@@ -86,7 +86,8 @@ svg {
 /* ============ Hero ============ */
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(320px, 440px) 260px;
+  /* Colunas laterais iguais (1fr) = círculo exatamente no centro da página */
+  grid-template-columns: minmax(0, 1fr) minmax(260px, min(440px, 32vw)) minmax(0, 1fr);
   grid-template-areas:
     "texto  foto atalhos"
     "social foto atalhos";
@@ -104,7 +105,7 @@ svg {
 
 .hero__nome {
   margin: 0;
-  font-size: clamp(48px, 7vw, 84px);
+  font-size: clamp(44px, 4.8vw, 72px);
   line-height: .95; font-weight: 800; letter-spacing: -2px;
   text-transform: uppercase;
 }
@@ -112,29 +113,36 @@ svg {
 .tag {
   margin: 0; padding: 6px 14px; border-radius: 999px;
   background: var(--destaque); color: var(--sobre-destaque);
-  font-weight: 700; font-size: 17px;
+  font-weight: 700; font-size: 17px; white-space: nowrap;
 }
 
 .hero__descricao { margin: 0; max-width: 420px; color: var(--texto-suave); }
 
 .hero__acoes { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
 
-/* Foto + círculo + fade na base */
-.hero__foto { grid-area: foto; position: relative; align-self: end; display: flex; justify-content: center; }
-.hero__foto::before {
-  content: ""; position: absolute; left: 50%; top: 12%;
-  width: 95%; aspect-ratio: 1; transform: translateX(-50%);
-  border-radius: 50%; background: var(--circulo);
-  box-shadow: 0 30px 80px rgba(21, 23, 26, .14);
+/* Foto dentro do círculo, com anel verde em volta */
+.hero__foto {
+  grid-area: foto; position: relative;
+  width: 100%; max-width: 440px; justify-self: center;
 }
-.hero__foto img {
-  position: relative; width: 82%;
-  -webkit-mask-image: linear-gradient(to bottom, #000 55%, rgba(0,0,0,.6) 75%, transparent 98%);
-          mask-image: linear-gradient(to bottom, #000 55%, rgba(0,0,0,.6) 75%, transparent 98%);
+.hero__foto::before {
+  content: ""; position: absolute; inset: -12px;
+  border: 2px solid var(--destaque); border-radius: 50%;
+}
+.hero__moldura {
+  position: relative; aspect-ratio: 1;
+  border-radius: 50%; overflow: hidden;
+  background: var(--circulo);
+  box-shadow: 0 30px 70px rgba(21, 23, 26, .18);
+}
+.hero__moldura img {
+  position: absolute; left: 50%; top: 5%;
+  width: auto; max-width: none; height: 143%;
+  transform: translateX(-50%);
 }
 
 /* Cards flutuantes */
-.atalhos { grid-area: atalhos; display: flex; flex-direction: column; gap: 22px; }
+.atalhos { grid-area: atalhos; justify-self: end; display: flex; flex-direction: column; gap: 22px; }
 
 .card {
   display: flex; align-items: center; gap: 14px;
@@ -215,6 +223,21 @@ svg {
   font-size: 13px; font-weight: 600;
 }
 
+/* Selo de status do projeto */
+.status {
+  align-self: flex-start; display: inline-flex; align-items: center; gap: 8px;
+  margin: 0; padding: 4px 12px; border-radius: 999px;
+  background: var(--bg); border: 1px solid var(--borda);
+  font-size: 12px; font-weight: 700; letter-spacing: .02em; text-transform: uppercase;
+}
+.status::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--texto-suave); }
+.status--producao { background: var(--destaque); border-color: var(--destaque); color: var(--sobre-destaque); }
+.status--producao::before { background: var(--sobre-destaque); }
+.status--testes::before { background: #E8A317; }
+.status--dev::before { background: var(--texto); }
+
+.projeto__corpo .projeto__nota { margin-top: auto; padding-top: 8px; font-size: 13px; font-weight: 600; }
+
 .projeto__links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: auto; padding-top: 8px; }
 .projeto__links .btn { min-height: 44px; padding: 0 18px; font-size: 14px; }
 
@@ -251,7 +274,7 @@ svg {
 
   .hero__foto { max-width: 300px; justify-self: center; }
 
-  .atalhos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .atalhos { justify-self: stretch; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
   .card, .card:nth-child(even) { width: auto; margin-left: 0; animation: none; padding: 12px; font-size: 14px; }
   .card__icone { width: 40px; height: 40px; border-radius: 12px; }
 
