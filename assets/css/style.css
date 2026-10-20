@@ -317,6 +317,59 @@ svg {
   .sobre__subtitulo { margin-top: 56px; }
 }
 
+/* ============ Contato ============ */
+.contato { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 32px; align-items: start; }
+
+.form {
+  display: flex; flex-direction: column; gap: 10px;
+  padding: 32px; border-radius: 24px;
+  background: var(--surface); border: 1px solid var(--borda); box-shadow: var(--sombra);
+}
+.form__linha { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+
+.campo { display: flex; flex-direction: column; gap: 6px; }
+.campo label { font-size: 14px; font-weight: 700; }
+.campo input, .campo select, .campo textarea {
+  width: 100%; padding: 12px 14px; min-height: 48px;
+  font: inherit; color: var(--texto);
+  background: #EEF0F2; border: 1px solid var(--borda); border-radius: 12px;
+}
+.campo textarea { resize: vertical; min-height: 130px; }
+.campo input:focus-visible, .campo select:focus-visible, .campo textarea:focus-visible {
+  outline: 3px solid var(--destaque); outline-offset: 0; border-color: var(--texto);
+}
+.campo [aria-invalid="true"] { border-color: #B42318; border-width: 2px; }
+.campo__erro { margin: 0; min-height: 18px; font-size: 13px; line-height: 18px; font-weight: 600; color: #8A1C12; }
+
+/* Fora da tela (e não display:none) para robôs ainda "verem" o campo */
+.campo-armadilha { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+.consentimento { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: var(--texto-suave); cursor: pointer; }
+.consentimento input { width: 20px; height: 20px; margin-top: 1px; accent-color: var(--texto); flex-shrink: 0; }
+
+.form__enviar { align-self: flex-start; border: 0; cursor: pointer; font-family: inherit; }
+.form__enviar:disabled { opacity: .6; cursor: wait; transform: none; }
+
+.form__status { margin: 0; font-weight: 700; min-height: 1.5em; }
+.form__status[data-tipo="sucesso"] { color: #1E5C0E; }
+.form__status[data-tipo="erro"] { color: #8A1C12; }
+
+.contato__canais { display: flex; flex-direction: column; gap: 14px; }
+.canal {
+  display: flex; align-items: center; gap: 14px;
+  padding: 16px; border-radius: 18px; text-decoration: none;
+  background: var(--surface); border: 1px solid var(--borda);
+  transition: border-color .2s, transform .2s;
+}
+.canal:hover { border-color: var(--texto); transform: translateX(4px); }
+.canal strong { display: block; }
+.canal small { color: var(--texto-suave); font-size: 13px; }
+
+@media (max-width: 960px) {
+  .contato, .form__linha { grid-template-columns: 1fr; }
+  .form { padding: 22px; }
+}
+
 .rodape { text-align: center; padding: 32px; color: var(--texto-suave); font-size: 14px; }
 
 /* ============ Tablet e celular ============ */

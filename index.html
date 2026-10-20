@@ -270,8 +270,71 @@
     </section>
 
     <section id="contato" class="secao" aria-labelledby="contato-titulo">
-      <h2 id="contato-titulo">Contato</h2>
-      <p>Em breve.</p>
+      <div class="secao__topo">
+        <p class="secao__sobretitulo"><span aria-hidden="true"></span>Contato</p>
+        <h2 id="contato-titulo">Vamos conversar</h2>
+        <p class="secao__intro">Tem uma oportunidade, um projeto ou só quer trocar uma ideia? Me manda uma mensagem que eu respondo em breve.</p>
+      </div>
+
+      <div class="contato">
+        <!-- Formspree: troque SEU_ID_FORMSPREE pelo ID do seu formulário -->
+        <form class="form" action="https://formspree.io/f/SEU_ID_FORMSPREE" method="POST" data-form-contato novalidate>
+          <div class="form__linha">
+            <div class="campo">
+              <label for="nome">Nome</label>
+              <input id="nome" name="nome" type="text" autocomplete="name" required minlength="2" maxlength="80">
+            </div>
+            <div class="campo">
+              <label for="email">E-mail</label>
+              <input id="email" name="email" type="email" autocomplete="email" required maxlength="120">
+            </div>
+          </div>
+
+          <div class="campo">
+            <label for="assunto">Assunto</label>
+            <select id="assunto" name="assunto" required>
+              <option value="">Selecione...</option>
+              <option>Oportunidade de emprego</option>
+              <option>Projeto freelance</option>
+              <option>Outro assunto</option>
+            </select>
+          </div>
+
+          <div class="campo">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" rows="5" required minlength="10" maxlength="2000"></textarea>
+          </div>
+
+          <!-- Honeypot: invisível para pessoas; robôs preenchem e a mensagem é descartada -->
+          <div class="campo-armadilha" aria-hidden="true">
+            <label for="_gotcha">Não preencha este campo</label>
+            <input id="_gotcha" name="_gotcha" type="text" tabindex="-1" autocomplete="off">
+          </div>
+
+          <label class="consentimento">
+            <input type="checkbox" name="consentimento" required>
+            <span>Concordo que meu nome e e-mail sejam usados apenas para responder este contato (LGPD).</span>
+          </label>
+
+          <button class="btn btn--escuro form__enviar" type="submit">Enviar mensagem</button>
+          <p class="form__status" role="status" aria-live="polite"></p>
+        </form>
+
+        <aside class="contato__canais" aria-label="Outros canais">
+          <a class="canal" href="https://www.linkedin.com/in/paulo-henrique-guilhen" target="_blank" rel="noopener noreferrer">
+            <span class="card__icone" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg></span>
+            <span><strong>LinkedIn</strong><small>paulo-henrique-guilhen</small></span>
+          </a>
+          <a class="canal" href="https://github.com/Guilhen35" target="_blank" rel="noopener noreferrer">
+            <span class="card__icone" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 19c-4 1.5-4-2-6-2m12 4v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12 12 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg></span>
+            <span><strong>GitHub</strong><small>Guilhen35</small></span>
+          </a>
+          <a class="canal" href="/assets/cv/curriculo.pdf" download>
+            <span class="card__icone" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M12 12v6M9 15l3 3 3-3"/></svg></span>
+            <span><strong>Currículo</strong><small>Baixar em PDF</small></span>
+          </a>
+        </aside>
+      </div>
     </section>
   </main>
 
