@@ -251,9 +251,19 @@ svg {
   text-decoration-thickness: 3px; text-underline-offset: 5px;
 }
 
+/* Link secundário fica acima do link "esticado" do card */
+.projeto__links .projeto__cta { margin-top: 0; padding-top: 0; }
+.projeto__codigo {
+  position: relative; z-index: 1;
+  display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px;
+  border: 1px solid var(--borda); border-radius: 12px; background: var(--bg);
+  font-size: 14px; font-weight: 700; text-decoration: none;
+}
+.projeto__codigo:hover { border-color: var(--texto); }
+
 .projeto__corpo .projeto__nota { margin-top: auto; padding-top: 8px; font-size: 13px; font-weight: 600; }
 
-.projeto__links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: auto; padding-top: 8px; }
+.projeto__links { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; margin-top: auto; padding-top: 8px; }
 .projeto__links .btn { min-height: 44px; padding: 0 18px; font-size: 14px; }
 
 /* ============ Sobre mim ============ */
