@@ -5,6 +5,7 @@
   --texto: #15171A; --suave: #3D4248; --destaque: #A3E635;
 }
 * { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 body { margin: 0; font-family: 'Jakarta', sans-serif; color: var(--texto); font-size: 8.6pt; line-height: 1.45; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 .pagina { width: 210mm; height: 297mm; position: relative; overflow: hidden; background: #fff; page-break-after: always; }
 .pagina:last-child { page-break-after: auto; }
@@ -103,13 +104,5 @@ a { color: inherit; text-decoration: none; }
     min-height: 44px; padding: 0 18px; border: 0; border-radius: 10px; cursor: pointer;
     background: #A3E635; color: #121417; font: 800 14px 'Jakarta', system-ui, sans-serif;
   }
-}
-/* Celular: a folha A4 encolhe para caber na tela */
-@media screen and (max-width: 840px) {
-  body { padding-left: 0; padding-right: 0; }
-  .pagina { zoom: .62; }
-}
-@media screen and (max-width: 560px) {
-  .pagina { zoom: .47; }
 }
 @media print { .barra-cv { display: none; } }
