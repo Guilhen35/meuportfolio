@@ -18,8 +18,8 @@
 
   <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="/assets/fonts/plus-jakarta-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/assets/css/style.css?v=2">
-  <script src="/assets/js/main.js?v=2" defer></script>
+  <link rel="stylesheet" href="/assets/css/style.css?v=3">
+  <script src="/assets/js/main.js?v=3" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
@@ -97,8 +97,17 @@
         <p class="secao__intro">Sistemas reais para clientes reais, do banco de dados ao deploy, e projetos de estudo em web e mobile.</p>
       </div>
 
+      <div class="filtros" role="group" aria-label="Filtrar projetos por fase" data-filtros hidden>
+        <button type="button" class="filtro filtro--todos" data-fase="todos" aria-pressed="true">Todos</button>
+        <button type="button" class="filtro filtro--final" data-fase="final" aria-pressed="false">Versão final</button>
+        <button type="button" class="filtro filtro--beta" data-fase="beta" aria-pressed="false">V1 em teste beta</button>
+        <button type="button" class="filtro filtro--dev" data-fase="dev" aria-pressed="false">Em desenvolvimento</button>
+      </div>
+
+      <p class="filtro-vazio" data-filtro-vazio role="status" hidden>Nenhum projeto nesta fase no momento.</p>
+
       <div class="projetos">
-        <article class="projeto">
+        <article class="projeto" data-fase="beta">
           <img class="projeto__imagem" src="/assets/img/projetos/erp-capa.png" alt="Dashboard do ERP de locação de plataformas" width="800" height="500" loading="lazy">
           <div class="projeto__corpo">
             <p class="status status--beta">V1 em teste beta</p>
@@ -114,7 +123,7 @@
           </div>
         </article>
 
-        <article class="projeto">
+        <article class="projeto" data-fase="final">
           <img class="projeto__imagem" src="/assets/img/projetos/barbearia-capa.png" alt="Tela inicial do site da Sr. Pedro Barbearia" width="800" height="500" loading="lazy">
           <div class="projeto__corpo">
             <p class="status status--final">Versão final</p>
@@ -130,7 +139,7 @@
           </div>
         </article>
 
-        <article class="projeto">
+        <article class="projeto" data-fase="beta">
           <img class="projeto__imagem" src="/assets/img/projetos/finance-capa.png" alt="Resumo do mês no Finance AI" width="800" height="500" loading="lazy">
           <div class="projeto__corpo">
             <p class="status status--beta">V1 em teste beta</p>
@@ -147,7 +156,7 @@
           </div>
         </article>
 
-        <article class="projeto">
+        <article class="projeto" data-fase="final">
           <img class="projeto__imagem" src="/assets/img/projetos/clima-capa.png" alt="Tela do App de Clima com a previsão do tempo" width="800" height="500" loading="lazy">
           <div class="projeto__corpo">
             <p class="status status--final">Versão final</p>
@@ -163,7 +172,7 @@
           </div>
         </article>
 
-        <article class="projeto">
+        <article class="projeto" data-fase="final">
           <img class="projeto__imagem" src="/assets/img/projetos/login-capa.png" alt="Tela de login feita em Flutter" width="800" height="500" loading="lazy">
           <div class="projeto__corpo">
             <p class="status status--final">Versão final</p>
@@ -179,7 +188,7 @@
           </div>
         </article>
 
-        <article class="projeto">
+        <article class="projeto" data-fase="final">
           <img class="projeto__imagem" src="/assets/img/projetos/dentedatraira-capa.png" alt="Página inicial do site Dente da Traíra" width="800" height="500" loading="lazy">
           <div class="projeto__corpo">
             <p class="status status--final">Versão final</p>
@@ -195,7 +204,7 @@
           </div>
         </article>
 
-        <article class="projeto">
+        <article class="projeto" data-fase="final">
           <img class="projeto__imagem" src="/assets/img/projetos/pizzalider-capa.png" alt="Página inicial do site da Pizzalider" width="800" height="500" loading="lazy">
           <div class="projeto__corpo">
             <p class="status status--final">Versão final</p>
@@ -311,7 +320,7 @@
       <div class="secao__topo">
         <p class="secao__sobretitulo"><span aria-hidden="true"></span>Contato</p>
         <h2 id="contato-titulo">Vamos conversar</h2>
-        <p class="secao__intro">Tem uma oportunidade, um projeto ou só quer trocar uma ideia? Me manda uma mensagem que eu respondo em breve.</p>
+        <p class="secao__intro">Tem uma oportunidade profissional ou um projeto em mente? Envie uma mensagem e eu retorno em breve.</p>
       </div>
 
       <div class="contato">

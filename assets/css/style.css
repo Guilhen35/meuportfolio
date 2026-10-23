@@ -188,6 +188,33 @@ svg {
 .secao__intro { margin: 0; max-width: 560px; color: var(--texto-suave); }
 
 /* ============ Projetos ============ */
+/* Filtro por fase (mesmas cores dos selos) */
+.filtros { display: flex; flex-wrap: wrap; gap: 10px; margin: -24px 0 32px; }
+.filtros[hidden], .filtro[hidden] { display: none; }
+.filtro {
+  display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 16px;
+  border-radius: 999px; border: 1px solid var(--borda); background: var(--surface); color: var(--texto);
+  font-family: inherit; font-size: 13px; font-weight: 700; line-height: 1; text-transform: uppercase; letter-spacing: .02em; cursor: pointer;
+  box-shadow: 0 0 0 rgba(21, 23, 26, 0);
+  transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease, opacity .2s ease;
+}
+.filtro::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--texto-suave); }
+.filtro--todos::before { display: none; }
+.filtro--final::before { background: var(--destaque); }
+.filtro--beta::before { background: #F59E0B; }
+.filtro:hover, .filtro:focus-visible { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(21, 23, 26, .16); }
+.filtro:focus-visible { outline: 2px solid var(--texto); outline-offset: 2px; }
+.filtro[aria-pressed="true"] { border-color: transparent; color: var(--sobre-destaque); }
+.filtro--todos[aria-pressed="true"] { background: var(--texto); color: #F3F4F5; }
+.filtro--final[aria-pressed="true"] { background: var(--destaque); }
+.filtro--final[aria-pressed="true"]::before, .filtro--beta[aria-pressed="true"]::before { background: var(--sobre-destaque); }
+.filtro--beta[aria-pressed="true"] { background: #F59E0B; }
+.filtro--dev[aria-pressed="true"] { background: var(--texto-suave); color: #F3F4F5; }
+.filtro--dev[aria-pressed="true"]::before { background: #F3F4F5; }
+.projeto[hidden] { display: none; }
+.filtro-vazio { margin: 0 0 32px; padding: 24px; border: 1px dashed var(--borda); border-radius: var(--raio); color: var(--texto-suave); text-align: center; }
+.filtro-vazio[hidden] { display: none; }
+
 .projetos {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
@@ -425,6 +452,8 @@ svg {
 
 /* Respeita quem pediu menos movimento no sistema */
 @media (prefers-reduced-motion: reduce) {
+  .filtro { transition: none; }
+  .filtro:hover, .filtro:focus-visible { transform: none; }
   html { scroll-behavior: auto; }
   .card { animation: none; }
   .btn, .projeto { transition: none; }

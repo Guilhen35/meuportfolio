@@ -141,3 +141,24 @@ if (form) {
 document.querySelectorAll('[data-ano]').forEach((el) => {
   el.textContent = new Date().getFullYear();
 });
+
+// Filtro de projetos por fase. Sem JavaScript, os filtros ficam escondidos e todos os projetos aparecem.
+const filtros = document.querySelector('[data-filtros]');
+if (filtros) {
+  const cards = [...document.querySelectorAll('.projeto[data-fase]')];
+  const botoes = [...filtros.querySelectorAll('[data-fase]')];
+
+  const vazio = document.querySelector('[data-filtro-vazio]');
+
+  filtros.addEventListener('click', (e) => {
+    const botao = e.target.closest('button[data-fase]');
+    if (!botao) return;
+    const fase = botao.dataset.fase;
+    botoes.forEach((b) => b.setAttribute('aria-pressed', String(b === botao)));
+    cards.forEach((c) => { c.hidden = fase !== 'todos' && c.dataset.fase !== fase; });
+    // Fase sem projetos (ex.: nada em desenvolvimento no momento): mostra um aviso no lugar da grade
+    if (vazio) vazio.hidden = cards.some((c) => !c.hidden);
+  });
+
+  filtros.hidden = false;
+}
