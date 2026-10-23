@@ -186,6 +186,9 @@ svg {
 .secao__sobretitulo { display: flex; align-items: center; gap: 12px; margin: 0; font-weight: 600; color: var(--texto-suave); }
 .secao__sobretitulo span { width: 32px; height: 3px; background: var(--destaque); }
 .secao__intro { margin: 0; max-width: 560px; color: var(--texto-suave); }
+.secao__intro--longa { max-width: 720px; display: flex; flex-direction: column; gap: 10px; }
+.secao__intro--longa p { margin: 0; }
+.secao__nota { font-size: 14px; opacity: .85; padding-left: 12px; border-left: 3px solid var(--destaque); }
 
 /* ============ Projetos ============ */
 /* Filtro por fase (mesmas cores dos selos) */
