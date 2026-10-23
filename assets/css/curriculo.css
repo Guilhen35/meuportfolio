@@ -16,7 +16,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 a { color: inherit; text-decoration: none; }
 
 /* Cabeçalho */
-.topo { background: var(--bg); padding: 11mm 13mm 9mm; display: flex; align-items: center; gap: 8mm; }
+.topo { background: var(--bg); padding: 8mm 13mm 7mm; display: flex; align-items: center; gap: 8mm; }
 .foto { width: 36mm; height: 36mm; border-radius: 50%; background: var(--circulo); overflow: hidden; position: relative; flex-shrink: 0; outline: .7mm solid var(--destaque); outline-offset: 1.6mm; }
 .foto img { position: absolute; left: 50%; top: 5%; height: 143%; transform: translateX(-50%); }
 .nome { margin: 0; font-size: 25pt; line-height: .98; font-weight: 800; letter-spacing: -.02em; text-transform: uppercase; }
@@ -106,4 +106,6 @@ a { color: inherit; text-decoration: none; }
     background: #A3E635; color: #121417; font: 800 14px 'Jakarta', system-ui, sans-serif;
   }
 }
+.chamada { display: block; margin: 0 0 3mm; padding: 1.6mm 3mm; border-left: 1mm solid var(--destaque); background: color-mix(in srgb, var(--destaque) 12%, transparent); border-radius: 1mm; font-size: 7.8pt; line-height: 1.45; text-decoration: none; }
+.chamada span { white-space: nowrap; font-weight: 700; text-decoration: underline; text-decoration-color: var(--destaque); text-decoration-thickness: .6mm; text-underline-offset: .6mm; }
 @media print { .barra-cv { display: none; } }
