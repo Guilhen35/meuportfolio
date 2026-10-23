@@ -231,10 +231,13 @@ svg {
   font-size: 12px; font-weight: 700; letter-spacing: .02em; text-transform: uppercase;
 }
 .status::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--texto-suave); }
-.status--producao { background: var(--destaque); border-color: var(--destaque); color: var(--sobre-destaque); }
-.status--producao::before { background: var(--sobre-destaque); }
-.status--testes::before { background: #E8A317; }
-.status--dev::before { background: var(--texto); }
+/* Fases: cinza = em desenvolvimento, laranja = V1 em teste beta, verde = versão final */
+.status--dev { background: var(--surface); color: var(--texto-suave); }
+.status--dev::before { background: var(--texto-suave); }
+.status--beta { background: #F59E0B; border-color: #F59E0B; color: var(--sobre-destaque); }
+.status--beta::before { background: var(--sobre-destaque); }
+.status--final { background: var(--destaque); border-color: var(--destaque); color: var(--sobre-destaque); }
+.status--final::before { background: var(--sobre-destaque); }
 
 /* Card inteiro clicável: o ::after do link cobre o card (técnica "stretched link") */
 .projeto { position: relative; }

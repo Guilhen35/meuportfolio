@@ -66,6 +66,7 @@ a { color: inherit; text-decoration: none; }
 .projeto h3 { margin: 0; font-size: 10pt; font-weight: 800; }
 .status { flex-shrink: 0; font-size: 6.6pt; font-weight: 800; text-transform: uppercase; letter-spacing: .03em; padding: .4mm 2.2mm; border-radius: 10mm; border: .25mm solid var(--borda); background: var(--surface); }
 .status.verde { background: var(--destaque); border-color: var(--destaque); }
+.status.laranja { background: #F59E0B; border-color: #F59E0B; }
 .projeto .desc { margin-top: 1.2mm; color: var(--suave); }
 .projeto ul.pontos-txt { margin-top: 1.4mm; }
 .projeto ul.pontos-txt li { position: relative; padding-left: 3.4mm; color: var(--suave); }
