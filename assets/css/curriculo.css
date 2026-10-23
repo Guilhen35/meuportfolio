@@ -30,7 +30,7 @@ a { color: inherit; text-decoration: none; }
 /* Corpo */
 .corpo { display: grid; grid-template-columns: 64mm 1fr; height: calc(297mm - 58mm); }
 .lateral { background: var(--surface); padding: 7mm 7mm 7mm 13mm; display: flex; flex-direction: column; gap: 5.5mm; }
-.principal { padding: 7mm 13mm 7mm 8mm; display: flex; flex-direction: column; gap: 5mm; }
+.principal { padding: 6mm 13mm 6mm 8mm; display: flex; flex-direction: column; gap: 4mm; }
 
 .numeros { display: grid; grid-template-columns: 1fr 1fr; gap: 2mm; }
 .numeros li { background: #fff; border: .25mm solid var(--borda); border-radius: 3mm; padding: 2.4mm 2.6mm; }
@@ -59,6 +59,7 @@ a { color: inherit; text-decoration: none; }
 
 .resumo { font-size: 8.8pt; line-height: 1.5; color: var(--suave); }
 .resumo strong { color: var(--texto); }
+.resumo + .resumo { margin-top: 2mm; }
 
 .projeto { border: .25mm solid var(--borda); border-radius: 3.5mm; padding: 3.4mm 4mm; }
 .projeto + .projeto { margin-top: 3mm; }
